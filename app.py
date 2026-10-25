@@ -863,8 +863,11 @@ def analytics():
 
 
 
+# Initialize the database when the app is imported by Render/Gunicorn
+init_db()
+
 if __name__ == "__main__":
-    init_db()
     print("CivicPulse database is ready.")
     print("Open http://127.0.0.1:5000 in your browser.")
-    app.run(debug=True)
+    app.run(debug=False)
+
